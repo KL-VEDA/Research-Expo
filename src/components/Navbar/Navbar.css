@@ -1,51 +1,57 @@
-/* Navbar container */
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background-color: var(--academic-maroon); /* Using the defined color */
-  color: var(--pure-white); /* White text color */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 1rem 3rem;
+  background-color: var(--academic-maroon);
+  color: var(--pure-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Navbar logo section */
-.navbar-logo {
-  flex: 1;
+/* Logo */
+.navbar-logo img {
+  height: 55px;
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
-.navbar-logo-image {
-  width: 100px; /* Adjust the size of the logo */
-  height: auto;
+.navbar-logo img:hover {
+  transform: scale(1.05);
 }
 
-/* Navbar links container */
+/* Links */
 .navbar-links {
   display: flex;
-  gap: 20px; /* Space between links */
+  gap: 2rem;
 }
 
-/* Individual Navbar links */
 .navbar-link {
+  color: var(--pure-white);
   text-decoration: none;
-  color: var(--pure-white); /* White color for links */
-  font-size: 1.2rem; /* Adjust font size for readability */
-  font-weight: 500; /* Slightly bolder font for links */
-  transition: color 0.3s ease-in-out;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* Hover effect for links */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: var(--muted-gold);
+  transition: width 0.3s ease;
+}
+
 .navbar-link:hover {
-  color: var(--clay-rust); /* Change color on hover to Clay Rust */
+  color: var(--muted-gold);
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-  .navbar-container {
-    padding: 10px 20px;
-  }
-
-  .navbar-links {
-    gap: 15px;
-  }
+.navbar-link:hover::after {
+  width: 100%;
 }
