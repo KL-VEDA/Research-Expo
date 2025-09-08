@@ -1,0 +1,56 @@
+.categories-container {
+  padding: 3rem 6rem;
+  background: linear-gradient(135deg, var(--ivory-white), var(--warm-beige));
+  color: var(--charcoal-text);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.categories-title {
+  font-size: 2.8rem;
+  color: var(--academic-maroon);
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+.categories-subtitle {
+  font-size: 1.3rem;
+  color: var(--muted-brick);
+  margin-bottom: 2.5rem;
+}
+
+/* Grid layout */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Category Card */
+.category-card {
+  background: var(--pure-white);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.category-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--deep-charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.category-description {
+  font-size: 1rem;
+  color: var(--charcoal-text);
+  line-height: 1.5;
+}
