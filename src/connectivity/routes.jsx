@@ -23,5 +23,68 @@ class SERVER {
     }
 }
 
+
+
+class ADMIN {
+    // Login function: stores JWT token on success
+    static async login(username, password) {
+        try {
+            const response = await fetch(API.ADMIN.LOGIN, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await response.json();
+
+            if (data.success && data.token) {
+                // Store JWT token in localStorage
+                localStorage.setItem("token", data.token);
+            }
+
+            return data; // { success: true/false, message: "...", token? }
+        } catch (error) {
+            console.error("Error logging in:", error);
+            return { success: false, message: error.message };
+        }
+    }
+
+    // Check if JWT token is valid by calling protected backend route
+    static async checkProtected() {
+        const token = localStorage.getItem("token");
+        if (!token) return { success: false, message: "No token found" };
+
+        try {
+            const response = await fetch(`${API.ADMIN.BASE}/protected`, {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            const data = await response.json();
+            return data; // { success: true/false, message: "..." }
+        } catch (error) {
+            console.error("Error checking token:", error);
+            return { success: false, message: error.message };
+        }
+    }
+
+    // Optional: log out admin
+    static logout() {
+        localStorage.removeItem("token");
+    }
+
+    // Optional: helper to get current token
+    static getToken() {
+        return localStorage.getItem("token");
+    }
+}
+
+
+
 // Export the SERVER class
-export { SERVER };
+
+export { SERVER, ADMIN };

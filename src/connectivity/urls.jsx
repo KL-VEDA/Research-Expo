@@ -17,10 +17,10 @@ class API {
     }
   };
 
-  static get AUTHENTICATION() {
+  static get ADMIN() {
     // API.AUTHENTICATION.BASE  := http://.../auth
     // API.AUTHENTICATION.LOGIN := http://.../auth/login
-    const base = `${this.BACKEND}/auth`;
+    const base = `${this.BACKEND}/admin`;
     return {
       BASE: base,
       LOGIN: `${base}/login`
