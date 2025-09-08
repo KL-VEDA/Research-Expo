@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar/Navbar'; // Import the Navbar
+import Navbar from './components/Navbar/Navbar.jsx'; // Import the Navbar
 import LandingPage from './pages/LandingPage/LandingPage';
 import About from './pages/About/About.jsx';  // Import About page
 
