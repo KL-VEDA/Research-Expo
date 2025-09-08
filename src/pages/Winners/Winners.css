@@ -22,7 +22,7 @@
 /* Grid layout */
 .winners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -31,9 +31,11 @@
 .winner-card {
   background: var(--pure-white);
   border-radius: 15px;
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: left;
 }
 
 .winner-card:hover {
@@ -41,26 +43,48 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 }
 
-.winner-name {
-  font-size: 1.5rem;
+/* Badge for Prizes */
+.winner-badge {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  padding: 0.4rem 1.4rem;
+  border-radius: 20px;
   font-weight: bold;
-  color: var(--deep-charcoal);
-  margin-bottom: 0.5rem;
-}
-
-.winner-category {
   font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: var(--charcoal-text);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: var(--deep-charcoal);
 }
 
-.winner-prize {
-  display: inline-block;
-  background: var(--muted-gold);
-  color: var(--deep-charcoal);
-  font-weight: bold;
-  padding: 0.4rem 1rem;
-  border-radius: 8px;
+.prize-1 {
+  background: gold;
+}
+.prize-2 {
+  background: silver;
+}
+.prize-3 {
+  background: #cd7f32; /* Bronze */
+}
+
+/* Prize Details */
+.winner-reward {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--charcoal-text);
+  margin: 1.2rem 0 0.8rem 0;
+}
+
+.winner-recognition {
   font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-style: italic;
+  color: var(--muted-gold);
+  margin-bottom: 1rem;
+}
+
+.winner-focus,
+.winner-opportunities {
+  font-size: 1rem;
+  color: var(--charcoal-text);
+  margin: 0.6rem 0;
+  line-height: 1.5;
 }
