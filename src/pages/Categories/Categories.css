@@ -1,4 +1,4 @@
-.categories-container {
+.winners-container {
   padding: 3rem 6rem;
   background: linear-gradient(135deg, var(--ivory-white), var(--warm-beige));
   color: var(--charcoal-text);
@@ -6,51 +6,85 @@
   text-align: center;
 }
 
-.categories-title {
+.winners-title {
   font-size: 2.8rem;
   color: var(--academic-maroon);
   margin-bottom: 0.5rem;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
 }
 
-.categories-subtitle {
+.winners-subtitle {
   font-size: 1.3rem;
   color: var(--muted-brick);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 /* Grid layout */
-.categories-grid {
+.winners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
-/* Category Card */
-.category-card {
+/* Winner Card */
+.winner-card {
   background: var(--pure-white);
   border-radius: 15px;
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
   text-align: left;
 }
 
-.category-card:hover {
+.winner-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 }
 
-.category-name {
-  font-size: 1.4rem;
+/* Badge for Prizes */
+.winner-badge {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  padding: 0.4rem 1.4rem;
+  border-radius: 20px;
   font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   color: var(--deep-charcoal);
-  margin-bottom: 0.5rem;
 }
 
-.category-description {
+.prize-1 {
+  background: gold;
+}
+.prize-2 {
+  background: silver;
+}
+.prize-3 {
+  background: #cd7f32; /* Bronze */
+}
+
+/* Prize Details */
+.winner-reward {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--charcoal-text);
+  margin: 1.2rem 0 0.8rem 0;
+}
+
+.winner-recognition {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--muted-gold);
+  margin-bottom: 1rem;
+}
+
+.winner-focus,
+.winner-opportunities {
   font-size: 1rem;
   color: var(--charcoal-text);
+  margin: 0.6rem 0;
   line-height: 1.5;
 }

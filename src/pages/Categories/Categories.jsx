@@ -1,53 +1,52 @@
-// ./Components/Categories/Categories.jsx
+// ./Components/Winners/Winners.jsx
 import React from "react";
-import "./Categories.css";
+import "./Winners.css";
 
-function Categories() {
-  const categories = [
+function Winners() {
+  const prizes = [
     {
       id: 1,
-      name: "Artificial Intelligence & Machine Learning",
-      description: "Innovations in AI, Deep Learning, and Data Science.",
+      prize: "1st Prize",
+      reward: "₹1,00,000 Cash Award + Trophy + Certificate of Excellence",
+      recognition: "The highest honor for groundbreaking innovation and leadership in research.",
+      projectFocus: "Pioneering solutions in Artificial Intelligence, Biotechnology, and Renewable Energy.",
+      opportunities: "Special recognition on stage, feature in university research magazine, and direct mentorship from industry experts.",
     },
     {
       id: 2,
-      name: "Biotechnology",
-      description: "Exploring life sciences, genetics, and medical research.",
+      prize: "2nd Prize",
+      reward: "₹50,000 Cash Award + Trophy + Certificate of Merit",
+      recognition: "Celebrating impactful and promising research contributions.",
+      projectFocus: "Innovations in sustainable practices, healthcare technologies, and IoT solutions.",
+      opportunities: "Exclusive access to workshops, innovation labs, and research publication support.",
     },
     {
       id: 3,
-      name: "Sustainable Energy",
-      description: "Clean energy solutions for a greener future.",
-    },
-    {
-      id: 4,
-      name: "Robotics & Automation",
-      description: "Intelligent machines and automated systems.",
-    },
-    {
-      id: 5,
-      name: "Cybersecurity",
-      description: "Securing data and networks against threats.",
-    },
-    {
-      id: 6,
-      name: "Space & Aerospace",
-      description: "Advancements in satellites, rockets, and space exploration.",
+      prize: "3rd Prize",
+      reward: "₹25,000 Cash Award + Medal + Certificate of Appreciation",
+      recognition: "Honoring creativity, dedication, and impactful project outcomes.",
+      projectFocus: "Creative approaches in software solutions, green energy, and digital education tools.",
+      opportunities: "Networking with academic leaders and participation in upcoming innovation expos.",
     },
   ];
 
   return (
-    <div className="categories-container">
-      <h1 className="categories-title">📚 Research Categories</h1>
-      <p className="categories-subtitle">
-        Explore diverse fields of innovation and discovery.
+    <div className="winners-container">
+      <h1 className="winners-title">🏆 Research Expo 2025 Winners</h1>
+      <p className="winners-subtitle">
+        Recognizing the best projects that shaped innovation and discovery.
       </p>
 
-      <div className="categories-grid">
-        {categories.map((category) => (
-          <div key={category.id} className="category-card">
-            <h2 className="category-name">{category.name}</h2>
-            <p className="category-description">{category.description}</p>
+      <div className="winners-grid">
+        {prizes.map((item) => (
+          <div key={item.id} className="winner-card">
+            <span className={`winner-badge prize-${item.id}`}>
+              {item.prize}
+            </span>
+            <p className="winner-reward">{item.reward}</p>
+            <p className="winner-recognition">{item.recognition}</p>
+            <p className="winner-focus"><strong>Project Focus:</strong> {item.projectFocus}</p>
+            <p className="winner-opportunities"><strong>Opportunities:</strong> {item.opportunities}</p>
           </div>
         ))}
       </div>
@@ -55,4 +54,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default Winners;
