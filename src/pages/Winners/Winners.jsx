@@ -1,29 +1,52 @@
 // ./Components/Winners/Winners.jsx
-import React from 'react';
-import './Winners.css';
+import React from "react";
+import "./Winners.css";
 
 function Winners() {
-  const winners = [
-    { id: 1, name: "Team Innovators", category: "AI & ML", prize: "1st Place" },
-    { id: 2, name: "BioTech Pioneers", category: "Biotechnology", prize: "2nd Place" },
-    { id: 3, name: "Eco Warriors", category: "Sustainable Energy", prize: "3rd Place" },
+  const prizes = [
+    {
+      id: 1,
+      prize: "1st Prize",
+      reward: "₹1,00,000 Cash Award + Trophy + Certificate of Excellence",
+      recognition: "The highest honor for groundbreaking innovation and leadership in research.",
+      projectFocus: "Pioneering solutions in Artificial Intelligence, Biotechnology, and Renewable Energy.",
+      opportunities: "Special recognition on stage, feature in university research magazine, and direct mentorship from industry experts.",
+    },
+    {
+      id: 2,
+      prize: "2nd Prize",
+      reward: "₹50,000 Cash Award + Trophy + Certificate of Merit",
+      recognition: "Celebrating impactful and promising research contributions.",
+      projectFocus: "Innovations in sustainable practices, healthcare technologies, and IoT solutions.",
+      opportunities: "Exclusive access to workshops, innovation labs, and research publication support.",
+    },
+    {
+      id: 3,
+      prize: "3rd Prize",
+      reward: "₹25,000 Cash Award + Medal + Certificate of Appreciation",
+      recognition: "Honoring creativity, dedication, and impactful project outcomes.",
+      projectFocus: "Creative approaches in software solutions, green energy, and digital education tools.",
+      opportunities: "Networking with academic leaders and participation in upcoming innovation expos.",
+    },
   ];
 
   return (
     <div className="winners-container">
       <h1 className="winners-title">🏆 Research Expo 2025 Winners</h1>
       <p className="winners-subtitle">
-        Celebrating the brightest minds and groundbreaking research.
+        Recognizing the best projects that shaped innovation and discovery.
       </p>
 
       <div className="winners-grid">
-        {winners.map((winner) => (
-          <div key={winner.id} className="winner-card">
-            <h2 className="winner-name">{winner.name}</h2>
-            <p className="winner-category">
-              <strong>Category:</strong> {winner.category}
-            </p>
-            <span className="winner-prize">{winner.prize}</span>
+        {prizes.map((item) => (
+          <div key={item.id} className="winner-card">
+            <span className={`winner-badge prize-${item.id}`}>
+              {item.prize}
+            </span>
+            <p className="winner-reward">{item.reward}</p>
+            <p className="winner-recognition">{item.recognition}</p>
+            <p className="winner-focus"><strong>Project Focus:</strong> {item.projectFocus}</p>
+            <p className="winner-opportunities"><strong>Opportunities:</strong> {item.opportunities}</p>
           </div>
         ))}
       </div>

@@ -1,0 +1,29 @@
+.rules-container {
+  padding: 3rem 6rem;
+  background: var(--warm-beige);
+  color: var(--charcoal-text);
+  min-height: 100vh;
+}
+
+.rules-title {
+  font-size: 2.4rem;
+  color: var(--academic-maroon);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+}
+
+.rule-item {
+  background: var(--pure-white);
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-left: 6px solid var(--clay-rust);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
