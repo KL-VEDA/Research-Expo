@@ -3,7 +3,6 @@ import React from 'react';
 import './Winners.css';
 
 function Winners() {
-  // Dummy winner data (replace with API or props later)
   const winners = [
     { id: 1, name: "Team Innovators", category: "AI & ML", prize: "1st Place" },
     { id: 2, name: "BioTech Pioneers", category: "Biotechnology", prize: "2nd Place" },
