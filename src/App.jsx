@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />  {/* Add route for About page */}
+        <Route path="/winners" element={<Winners/>}/>
       </Routes>
     </Router>
   );
