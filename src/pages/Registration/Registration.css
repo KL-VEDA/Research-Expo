@@ -1,0 +1,43 @@
+.registration-container {
+  padding: 3rem 6rem;
+  background: var(--ivory-white);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.registration-title {
+  font-size: 2.4rem;
+  color: var(--academic-maroon);
+  margin-bottom: 2rem;
+}
+
+.registration-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.registration-form input,
+.registration-form select {
+  padding: 0.8rem;
+  border: 1px solid var(--light-gray-mist);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.register-btn {
+  background: var(--academic-maroon);
+  color: var(--pure-white);
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.register-btn:hover {
+  background: var(--light-maroon);
+}

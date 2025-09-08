@@ -7,6 +7,7 @@ import About from './pages/About/About.jsx';  // Import About page
 import Winners from './pages/Winners/Winners.jsx';
 import Categories from './pages/Categories/Categories.jsx'
 import Rules from './pages/Rules/Rules.jsx'
+import Registration from './pages/Registration/Registration.jsx'
 
 
 import "./App.css";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/winners" element={<Winners/>}/>
         <Route path="/categories" element={<Categories/>}/>
         <Route path="/rules" element={<Rules/>}/>
+        <Route path="/register" element={<Registration/>}/>
       </Routes>
     </Router>
   );
