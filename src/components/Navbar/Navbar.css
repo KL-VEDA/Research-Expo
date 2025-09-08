@@ -55,3 +55,23 @@
 .navbar-link:hover::after {
   width: 100%;
 }
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+
+/* Status colors */
+.status-dot.green {
+  background-color: green;
+}
+
+.status-dot.yellow {
+  background-color: yellow;
+}
+
+.status-dot.red {
+  background-color: red;
+}
