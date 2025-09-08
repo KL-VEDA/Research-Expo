@@ -1,0 +1,19 @@
+/* index.css */
+
+/* Reset default margin and padding for body */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif; /* You can choose your preferred font */
+}
+
+body {
+  background-color: #f4f4f4; /* Light background color for the entire page */
+}

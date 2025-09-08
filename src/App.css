@@ -1,0 +1,26 @@
+/* App.css */
+
+/* Defining color variables for consistent design */
+:root {
+  --academic-maroon: #7B2D26; /* Primary Maroon color */
+  --clay-rust: #A0522D; /* Secondary Rust color */
+  --muted-brick: #8B3E2F; /* Muted brick for subtle highlights */
+  --ivory-white: #FFFFF0; /* Light off-white background color */
+  --pure-white: #FFFFFF; /* Pure white for backgrounds */
+  --light-gray-mist: #D3D3D3; /* Soft light gray for less attention-grabbing areas */
+  --charcoal-text: #333333; /* Dark gray text color for readability */
+  
+  /* New Accent Colors */
+  --light-maroon: #9E2A2F; /* Lightened Maroon for hover and accents */
+  --warm-beige: #F5F5DC; /* Soft beige for background contrasts */
+  --pale-clay: #D8B29B; /* Lighter shade of Clay Rust for subtle elements */
+  --deep-charcoal: #1E1E1E; /* Darker text shade for emphasis */
+  --muted-gold: #C9A02F; /* Subtle gold for highlights or callouts */
+}
+
+/* General app styles */
+body {
+  background-color: var(--ivory-white);
+  color: var(--charcoal-text);
+  font-family: Arial, sans-serif;
+}

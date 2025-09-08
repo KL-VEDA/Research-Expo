@@ -1,0 +1,114 @@
+/* ./Components/Hero/Hero.css */
+
+/* Hero Container Styles */
+.hero-container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  height: 50vh;
+  width: 100vw; /* Ensure it uses the full viewport width */
+  padding: 20px;
+  margin: 20px 0px;
+  /* background: linear-gradient(135deg, rgba(123, 45, 38, 0.8), rgba(160, 82, 45, 0.8)), url('../../assets/your-background-image.jpg') no-repeat center center;  */
+  background-color: var(--pure-white);
+  background-size: cover; /* Adds background image with gradient overlay */
+  box-sizing: border-box;
+}
+
+/* Left Side (Logo Section) */
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  max-width: 500px;  /* Control logo size */
+  height: auto;
+}
+
+/* Right Side (Text Content Section) */
+.hero-right {
+  flex: 2;
+  text-align: left;
+  padding-left: 40px; /* Space between logo and text */
+}
+
+/* Title for Hero Section */
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--deep-charcoal); /* Light text for contrast */
+  margin-bottom: 20px;
+}
+
+/* Subtitle for Hero Section */
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--deep-charcoal);
+  margin-bottom: 40px;
+}
+
+/* Event Date and Location Details */
+.hero-details {
+  font-size: 1.2rem;
+  color: var(--deep-charcoal);
+  margin-bottom: 30px;
+}
+
+.hero-details p {
+  margin: 10px 0;
+}
+
+/* Hero Button (Know More) */
+.hero-button {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--deep-charcoal);
+  background-color: var(--clay-rust);
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  color: var(--pure-white);
+  background-color: var(--academic-maroon); /* Darker hover state */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .hero-left {
+    margin-bottom: 20px;
+  }
+
+  .hero-right {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-details {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+}
