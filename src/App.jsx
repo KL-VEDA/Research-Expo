@@ -9,6 +9,7 @@ import Categories from './pages/Categories/Categories.jsx'
 import Rules from './pages/Rules/Rules.jsx'
 import Registration from './pages/Registration/Registration.jsx'
 import Media from './pages/Media/media.jsx'
+import Contact from './pages/Contact/Contact.jsx'
 
 
 import "./App.css";
@@ -25,6 +26,7 @@ function App() {
         <Route path="/rules" element={<Rules/>}/>
         <Route path="/register" element={<Registration/>}/>
         <Route path="/media" element={<Media/>}/>
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </Router>
   );
