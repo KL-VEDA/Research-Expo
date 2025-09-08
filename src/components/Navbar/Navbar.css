@@ -12,7 +12,14 @@
 }
 
 /* Logo */
+.navbar-logo {
+  background-color: var(--pure-white);
+  display: flex;
+  align-items: center;
+}
+
 .navbar-logo img {
+  padding: 5px;
   height: 55px;
   width: auto;
   transition: transform 0.3s ease;
