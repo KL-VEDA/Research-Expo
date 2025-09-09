@@ -16,37 +16,37 @@ function About() {
   return (
     <div className="about-page">
 
-      <section id="about-flyer">
+      {/* <section id="about-flyer">
         <AboutFlyer />
-      </section>
+      </section> */}
 
-      <section id="about-research-expo">
+      {/* <section id="about-research-expo">
         <AboutResearchExpo />
-      </section>
+      </section> */}
 
-      <section id="content-brochure">
+      {/* <section id="content-brochure">
         <ContentBrochure />
-      </section>
+      </section> */}
 
-      <section id="outcomes">
+      {/* <section id="outcomes">
         <Outcomes />
-      </section>
+      </section> */}
 
-      <section id="timeline">
+      {/* <section id="timeline">
         <LandingPageTimeLine />
-      </section>
+      </section> */}
 
-      <section id="icees">
+      {/* <section id="icees">
         <AboutICEES />
-      </section>
+      </section> */}
 
-      <section id="AboutIRD">
+      {/* <section id="AboutIRD">
         <AboutIRD />
-      </section>
+      </section> */}
 
-      <section id="AboutVEDA">
+      {/* <section id="AboutVEDA">
         <AboutVEDA />
-      </section>
+      </section> */}
 
     </div>
   );
