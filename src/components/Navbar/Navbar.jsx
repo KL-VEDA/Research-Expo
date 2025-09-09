@@ -34,9 +34,9 @@ function Navbar() {
       {/* Top: Logos */}
       <div className="navbar-top">
         <div className="navbar-top-inner">
-          <img src={kllogo} alt="KL Logo" className="top-logo" />
-          <img src={vedaLogo} alt="VEDA Logo" className="top-logo" />
-          <img src={irdLogo} alt="IRD Logo" className="top-logo" />
+          <img draggable={false} src={kllogo} alt="KL Logo" className="top-logo" />
+          <img draggable={false} src={irdLogo} alt="IRD Logo" className="top-logo" style={{scale: "2", transform: "translateX(-40%)"}} />
+          <img draggable={false} src={vedaLogo} alt="VEDA Logo" className="top-logo" style={{scale: "1.7", transform: "translateX(-50%)"}} />
         </div>
       </div>
 
