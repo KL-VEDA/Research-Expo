@@ -14,7 +14,10 @@ import Media from './pages/Media/Media.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import Login from './pages/Login/Login.jsx';
 import Dashboard from './pages/Admin/Dashboard.jsx'; // Admin dashboard page
+import PageNotFound from './pages/PageNotFound/PageNotFound.jsx';
+
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx'; // JWT check wrapper
+
 
 import "./App.css";
 
@@ -41,7 +44,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="*" element={<div>Page not found</div>} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </Router>
