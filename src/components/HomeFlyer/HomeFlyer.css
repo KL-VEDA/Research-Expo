@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.flyer-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--ivory-white);
+  /* border-radius: 12px; */
+  border: 2px solid var(--light-maroon);
+}
+
+.flyer-wrapper {
+  display: flex;
+  width: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.flyer-image {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Navigation Panels (left/right) */
+.nav-panel {
+  position: absolute;
+  top: 0;
+  width: 5%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+  display: none;
+}
+
+.flyer-container:hover .nav-panel {
+  display: block;
+}
+
+/* Gradient backgrounds */
+.nav-panel.left {
+  left: 0;
+  background: linear-gradient(to right, var(--light-maroon), transparent);
+}
+
+.nav-panel.right {
+  right: 0;
+  background: linear-gradient(to left, var(--light-maroon), transparent);
+}
+
+/* Arrow styling inside navigation panels */
+.nav-panel .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--pure-white);
+  padding: 0 10px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.nav-panel.left .arrow {
+  left: 10px;
+}
+
+.nav-panel.right .arrow {
+  right: 10px;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: var(--light-gray-mist);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--academic-maroon);
+  border: 2px solid red;
+}
+
+/* Pause/Play Button */
+.pause-play {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: none;
+}
+
+.flyer-container:hover .pause-play {
+  display: block;
+}
+
+.pause-play button {
+  background-color: var(--warm-beige);
+  color: var(--deep-charcoal);
+  border: 1px solid var(--muted-gold);
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pause-play button:hover {
+  background-color: var(--muted-gold);
+  color: var(--pure-white);
+}

@@ -1,0 +1,46 @@
+.home-video-section {
+  width: 100%;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, var(--warm-beige), var(--ivory-white));
+  text-align: center;
+}
+
+.video-title {
+  font-size: 2.5rem;
+  color: var(--academic-maroon);
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-description {
+  font-size: 1.2rem;
+  color: var(--charcoal-text);
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  line-height: 1;
+}
+
+.home-video-container {
+  position: relative;
+  width: 70%;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-video-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+.home-video {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+  background-color: var(--pure-white);
+}

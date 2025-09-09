@@ -38,13 +38,13 @@ function Navbar() {
       {/* Navigation Links */}
       <div className="navbar-links">
         <Link to="/" className="navbar-link">Home</Link>
-        <Link to="/about" className="navbar-link">About</Link>
-        <Link to="/categories" className="navbar-link">Categories</Link>
-        <Link to="/rules" className="navbar-link">Rules</Link>
-        <Link to="/winners" className="navbar-link">Winners</Link>
-        <Link to="/register" className="navbar-link">Registration</Link>
-        <Link to="/media" className="navbar-link">Media</Link>
-        <Link to="/contact" className="navbar-link">Contact</Link>
+        {/* <Link to="/about" className="navbar-link">About</Link> */}
+        {/* <Link to="/categories" className="navbar-link">Categories</Link> */}
+        {/* <Link to="/rules" className="navbar-link">Rules</Link> */}
+        {/* <Link to="/winners" className="navbar-link">Winners</Link> */}
+        {/* <Link to="/register" className="navbar-link">Registration</Link> */}
+        {/* <Link to="/media" className="navbar-link">Media</Link> */}
+        {/* <Link to="/contact" className="navbar-link">Contact</Link> */}
 
         {/* Status Dot */}
         <div className={`status-dot ${status}`}></div>

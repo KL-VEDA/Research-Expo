@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
-import kllogo from '../../assets/kllogo.png';
+import expoImage from '../../assets/expo.png'; // ✅ New expo image
 
 function Hero() {
   return (
@@ -10,7 +10,7 @@ function Hero() {
       <div className="hero-overlay"></div> {/* subtle overlay effect */}
 
       <div className="hero-left">
-        <img src={kllogo} alt="KL Logo" className="hero-logo" />
+        <img src={expoImage} alt="Research Expo 2025" className="hero-expo-image" />
       </div>
 
       <div className="hero-right">
