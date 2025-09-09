@@ -19,10 +19,10 @@ function Footer() {
 
                     <div className="right-logos">
                         <div className="logo-container">
-                            <img src={irdLogo} alt="IRD Logo" className="footer-logo" />
+                            <img src={irdLogo} alt="IRD Logo" className="footer-logo"  style={{scale: "1.4"}} />
                         </div>
-                        <div className="logo-container">
-                            <img src={vedaLogo} alt="Veda Logo" className="footer-logo" />
+                        <div className="logo-container" >
+                            <img src={vedaLogo} alt="Veda Logo" className="footer-logo" style={{scale: "1.7"}}/>
                         </div>
                     </div>
                 </div>

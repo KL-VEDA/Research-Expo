@@ -1,55 +1,80 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import kllogo from '../../assets/kllogo.png';  
+import kllogo from '../../assets/kllogo.png';
+import vedaLogo from '../../assets/images/VEDA.png';
+import irdLogo from '../../assets/images/IRD.png';
 import './Navbar.css';
 import { SERVER } from "./../../connectivity/routes";
 
 function Navbar() {
-  const [status, setStatus] = useState('yellow'); // start with yellow (connecting)
+  const [status, setStatus] = useState('yellow');
 
-  // Call backend API
   async function checkServerStatus() {
-    setStatus('yellow'); // show yellow while fetching
+    setStatus('yellow');
     try {
       const result = await SERVER.checkServerStatus();
       if (result.status === true) {
-        setStatus('green');   // server healthy
+        setStatus('green');
       } else {
-        setStatus('red');     // server reachable but not healthy
+        setStatus('red');
       }
     } catch (err) {
-      setStatus('red');       // server unreachable
+      setStatus('red');
     }
   }
 
   useEffect(() => {
-    checkServerStatus(); // run once on mount
-    const interval = setInterval(checkServerStatus, 5000); // check every 5s
+    checkServerStatus();
+    const interval = setInterval(checkServerStatus, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <nav className="navbar-container">
-      {/* Logo Section */}
-      <div className="navbar-logo">
-        <img src={kllogo} alt="KL Logo" className="navbar-logo-image" />
+    <header className="navbar-wrapper">
+      {/* Top: Logos */}
+      <div className="navbar-top">
+        <div className="navbar-top-inner">
+          <img src={kllogo} alt="KL Logo" className="top-logo" />
+          <img src={vedaLogo} alt="VEDA Logo" className="top-logo" />
+          <img src={irdLogo} alt="IRD Logo" className="top-logo" />
+        </div>
       </div>
 
-      {/* Navigation Links */}
-      <div className="navbar-links">
-        <Link to="/" className="navbar-link">Home</Link>
-        {/* <Link to="/about" className="navbar-link">About</Link> */}
-        {/* <Link to="/categories" className="navbar-link">Categories</Link> */}
-        {/* <Link to="/rules" className="navbar-link">Rules</Link> */}
-        {/* <Link to="/winners" className="navbar-link">Winners</Link> */}
-        {/* <Link to="/register" className="navbar-link">Registration</Link> */}
-        {/* <Link to="/media" className="navbar-link">Media</Link> */}
-        {/* <Link to="/contact" className="navbar-link">Contact</Link> */}
+      {/* Bottom: Navigation Links */}
+      <nav className="navbar-container">
+        <div className="navbar-links-left">
+          <Link to="/" className="navbar-link">Home</Link>
+          <Link to="/about" className="navbar-link">About</Link>
 
-        {/* Status Dot */}
-        <div className={`status-dot ${status}`}></div>
-      </div>
-    </nav>
+          <div className="navbar-dropdown">
+            <span className="navbar-link">Compete ▾</span>
+            <div className="dropdown-content">
+              <Link to="/categories" className="dropdown-link">Categories</Link>
+              <Link to="/rules" className="dropdown-link">Rules</Link>
+              <Link to="/winners" className="dropdown-link">Winners</Link>
+            </div>
+          </div>
+
+          <Link to="/register" className="navbar-link">Registration</Link>
+
+          <div className="navbar-dropdown">
+            <span className="navbar-link">Media ▾</span>
+            <div className="dropdown-content">
+              <Link to="/media/researcathon" className="dropdown-link">Researcathon</Link>
+              <Link to="/media/icees" className="dropdown-link">ICEES</Link>
+              <Link to="/media/events" className="dropdown-link">Events</Link>
+            </div>
+          </div>
+
+          <Link to="/contact" className="navbar-link">Contact</Link>
+        </div>
+
+        {/* Right: Status Dot */}
+        <div className="navbar-status">
+          <div className={`status-dot ${status}`}></div>
+        </div>
+      </nav>
+    </header>
   );
 }
 
