@@ -1,0 +1,24 @@
+.ird-section {
+  background-color: #ffffff;
+  padding: 60px 30px;
+}
+
+.ird-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ird-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.ird-description {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

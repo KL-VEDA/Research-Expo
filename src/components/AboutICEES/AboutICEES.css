@@ -1,0 +1,24 @@
+.about-icees {
+  padding: 60px 30px;
+  background-color: #f0f4f8;
+}
+
+.icees-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.icees-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.icees-description {
+  font-size: 17px;
+  color: #444;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}

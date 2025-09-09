@@ -7,8 +7,8 @@ import ContentBrochure from '../../components/ContentBrochure/ContentBrochure.js
 import Outcomes from '../../components/Outcomes/Outcomes.jsx';
 import LandingPageTimeLine from '../../components/LandingPageTimeLine/LandingPageTimeLine.jsx';
 import AboutICEES from '../../components/AboutICEES/AboutICEES.jsx';
-import IRD from '../../components/IRD/IRD.jsx';
-import VEDA from '../../components/VEDA/VEDA.jsx';
+import AboutIRD from '../../components/AboutIRD/AboutIRD.jsx';
+import AboutVEDA from '../../components/AboutVEDA/AboutVEDA.jsx';
 
 import './About.css';
 
@@ -40,12 +40,12 @@ function About() {
         <AboutICEES />
       </section>
 
-      <section id="ird">
-        <IRD />
+      <section id="AboutIRD">
+        <AboutIRD />
       </section>
 
-      <section id="veda">
-        <VEDA />
+      <section id="AboutVEDA">
+        <AboutVEDA />
       </section>
 
     </div>
