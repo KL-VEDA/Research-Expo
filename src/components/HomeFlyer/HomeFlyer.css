@@ -29,16 +29,24 @@
 .nav-panel {
   position: absolute;
   top: 0;
-  width: 5%;
+  width: 2%;
   height: 100%;
   cursor: pointer;
   z-index: 2;
   display: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .flyer-container:hover .nav-panel {
   display: block;
+  transition: all 0.3s ease-in-out;
 }
+
+.flyer-container:hover .nav-panel:hover {
+  width: 5%;
+  transition: all 0.3s ease-in-out;
+}
+
 
 /* Gradient backgrounds */
 .nav-panel.left {
@@ -99,7 +107,7 @@
 .pause-play {
   position: absolute;
   bottom: 15px;
-  right: 15px;
+  right: 100px;
   display: none;
 }
 
@@ -111,11 +119,12 @@
   background-color: var(--warm-beige);
   color: var(--deep-charcoal);
   border: 1px solid var(--muted-gold);
-  padding: 6px 10px;
+  padding: 3px 5px;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  width: 180%;
 }
 
 .pause-play button:hover {
