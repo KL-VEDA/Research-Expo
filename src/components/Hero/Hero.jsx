@@ -22,7 +22,7 @@ function Hero() {
           <p><strong>Location:</strong> KL University, Vijayawada, Andhra Pradesh</p>
         </div>
 
-        <Link to="/about" className="hero-button">Know More</Link>
+        {/* <Link to="/about" className="hero-button">Know More</Link> */}
       </div>
     </div>
   );

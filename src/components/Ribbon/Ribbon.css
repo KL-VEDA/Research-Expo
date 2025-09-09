@@ -37,7 +37,7 @@
   padding: 0 1.2rem;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 12px;
+  border-radius: 7px;
   line-height: 1;
   height: 2.2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -145,7 +145,7 @@
 .ribbon-6 {
   background-color: var(--pure-white);
   border: 3px double var(--academic-maroon);
-  border-radius: 12px;
+  border-radius: 1px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
@@ -154,7 +154,7 @@
   color: var(--pure-white);
   font-weight: 700;
   padding: 0.4rem 1rem;
-  border-radius: 10px;
+  border-radius: 3px;
   font-size: 1rem;
 }
 

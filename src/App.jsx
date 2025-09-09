@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar.jsx';
+import Footer from "./components/Footer/Footer.jsx";
+
 import LandingPage from './pages/LandingPage/LandingPage';
 import About from './pages/About/About.jsx';
 import Winners from './pages/Winners/Winners.jsx';
@@ -41,6 +43,7 @@ function App() {
         />
         <Route path="*" element={<div>Page not found</div>} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

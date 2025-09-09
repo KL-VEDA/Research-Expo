@@ -1,0 +1,249 @@
+/* Footer container */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--academic-maroon);
+  color: var(--pure-white);
+  padding: 40px 60px;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Section styling */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Separator line */
+.separator {
+  border-left: 2px solid var(--muted-gold);
+  height: 40px;
+  margin: 0 15px;
+  align-self: center;
+  user-select: none;
+}
+
+/* Left Section: Logos */
+.footer-left {
+  display: flex;
+  flex-direction: row;       /* horizontal layout */
+  align-items: center;       /* vertical center */
+  gap: 20px;
+  min-width: 270px;          /* prevent shrinking */
+}
+
+/* KL logo container */
+.kl-logo-container {
+  width: 120px;
+  height: 150px;
+  background-color: var(--pure-white);
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.kl-logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Right logos stacked vertically */
+.right-logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+/* Each logo container inside right-logos */
+.logo-container {
+  width: 140px;
+  height: 70px;
+  background-color: var(--pure-white);
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.logo-container:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Center Section */
+.footer-center {
+  text-align: left;
+  justify-content: center;
+}
+
+.footer-heading {
+  color: var(--muted-gold);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.footer-center p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+/* Email Link */
+.email-link {
+  color: var(--pale-clay);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+/* University Link */
+.uni-link {
+  color: var(--muted-gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.uni-link:hover {
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+/* Right Section: Social Media */
+.footer-right {
+  text-align: center;
+  justify-content: center;
+}
+
+.social-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-qr {
+  height: 130px;
+  width: 130px;
+  border-radius: 8px;
+  background-color: var(--pure-white);
+  padding: 8px;
+  margin-bottom: 10px;
+  object-fit: contain;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.social-qr:hover {
+  transform: scale(1.05);
+}
+
+.social-link {
+  color: var(--muted-gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.4s ease;
+}
+
+.social-link:hover {
+  color: var(--warm-beige);
+  text-decoration: underline;
+}
+
+/* Footer bottom copyright */
+.footer-bottom {
+  background-color: var(--charcoal-text);
+  color: var(--warm-beige);
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+  margin-top: 0px;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    align-items: center;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .social-container {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Stack left logos vertically on mobile */
+  .footer-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .right-logos {
+    height: auto;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .logo-container {
+    width: 100px;
+    height: auto;
+  }
+
+  .kl-logo-container {
+    width: 120px;
+    height: auto;
+  }
+}

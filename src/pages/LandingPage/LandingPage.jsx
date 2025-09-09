@@ -5,23 +5,37 @@ import Hero from '../../components/Hero/Hero';
 import HomeVideo from '../../components/HomeVideo/HomeVideo.jsx';
 
 import Ribbon from '../../components/Ribbon/Ribbon.jsx'; // Importing the Ribbon component
+import LandingPageTimeLine from '../../components/LandingPageTimeLine/LandingPageTimeLine.jsx'; // Import the new component
 
 import './LandingPage.css'; // Importing the LandingPage CSS
 
 function LandingPage() {
   return (
     <div className="landing-page">
-        <section id="home-flyer">
-          <HomeFlyer />
-        </section>
-        <Ribbon />
-        <section id="hero">
-          <Hero />
-        </section>
-        <Ribbon text="EXPERIENCE THE RESEARCH EXPO" ribbon="5" />
-        <section id="home-video">
-          <HomeVideo />
-        </section>
+      <section id="home-flyer">
+        <HomeFlyer />
+      </section>
+
+      <Ribbon />
+
+      <section id="hero">
+        <Hero />
+      </section>
+
+      <Ribbon text="Research Expo 2025 - Important Dates" ribbon="6" />
+
+      {/* New Timeline Section */}
+      <section id="landing-timeline">
+        <LandingPageTimeLine />
+      </section>
+
+      <Ribbon text="EXPERIENCE THE RESEARCH EXPO" ribbon="5" />
+
+      <section id="home-video">
+        <HomeVideo />
+      </section>
+
+      <Ribbon ribbon="5" />
     </div>
   );
 }
