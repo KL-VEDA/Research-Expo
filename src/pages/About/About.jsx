@@ -1,27 +1,53 @@
 // ./pages/About/About.jsx
+
 import React from 'react';
-import './About.css';  // Import the About page CSS
+import AboutFlyer from '../../components/AboutFlyer/AboutFlyer.jsx';
+import AboutResearchExpo from '../../components/AboutResearchExpo/AboutResearchExpo.jsx';
+import ContentBrochure from '../../components/ContentBrochure/ContentBrochure.jsx';
+import Outcomes from '../../components/Outcomes/Outcomes.jsx';
+import LandingPageTimeLine from '../../components/LandingPageTimeLine/LandingPageTimeLine.jsx';
+import AboutICEES from '../../components/AboutICEES/AboutICEES.jsx';
+import IRD from '../../components/IRD/IRD.jsx';
+import VEDA from '../../components/VEDA/VEDA.jsx';
+
+import './About.css';
 
 function About() {
   return (
-    <div className="about-container">
-      <h1 className="about-title">About Research Expo 2025</h1>
-      <p className="about-description">
-        The **Research Expo 2025** is an event where the brightest minds come together to showcase their research and innovative ideas.
-      </p>
-      <p className="about-details">
-        This year’s Expo will focus on various fields including technology, engineering, social sciences, and interdisciplinary studies.
-      </p>
-      <h2 className="about-heading">What to Expect</h2>
-      <ul className="about-list">
-        <li>Poster and paper presentations</li>
-        <li>Interactive research discussions</li>
-        <li>Networking opportunities</li>
-        <li>Showcase of innovative technologies</li>
-      </ul>
-      <p className="about-contact">
-        For more details or inquiries, please <a href="mailto:info@researchexpo.com">contact us</a>.
-      </p>
+    <div className="about-page">
+
+      <section id="about-flyer">
+        <AboutFlyer />
+      </section>
+
+      <section id="about-research-expo">
+        <AboutResearchExpo />
+      </section>
+
+      <section id="content-brochure">
+        <ContentBrochure />
+      </section>
+
+      <section id="outcomes">
+        <Outcomes />
+      </section>
+
+      <section id="timeline">
+        <LandingPageTimeLine />
+      </section>
+
+      <section id="icees">
+        <AboutICEES />
+      </section>
+
+      <section id="ird">
+        <IRD />
+      </section>
+
+      <section id="veda">
+        <VEDA />
+      </section>
+
     </div>
   );
 }
