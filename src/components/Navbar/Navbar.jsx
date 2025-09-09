@@ -44,9 +44,9 @@ function Navbar() {
       <nav className="navbar-container">
         <div className="navbar-links-left">
           <Link to="/" className="navbar-link">Home</Link>
-          <Link to="/about" className="navbar-link">About</Link>
+          <Link to="/about" className="navbar-link"  style={{display: 'none'}}>About</Link>
 
-          <div className="navbar-dropdown">
+          <div className="navbar-dropdown" style={{display: 'none'}}>
             <span className="navbar-link">Compete ▾</span>
             <div className="dropdown-content">
               <Link to="/categories" className="dropdown-link">Categories</Link>
@@ -55,9 +55,9 @@ function Navbar() {
             </div>
           </div>
 
-          <Link to="/register" className="navbar-link">Registration</Link>
+          <Link to="/register" className="navbar-link"  style={{display: 'none'}}>Registration</Link>
 
-          <div className="navbar-dropdown">
+          <div className="navbar-dropdown"  style={{display: 'none'}}>
             <span className="navbar-link">Media ▾</span>
             <div className="dropdown-content">
               <Link to="/media/researcathon" className="dropdown-link">Researcathon</Link>
@@ -66,7 +66,7 @@ function Navbar() {
             </div>
           </div>
 
-          <Link to="/contact" className="navbar-link">Contact</Link>
+          <Link to="/contact" className="navbar-link"  style={{display: 'none'}}>Contact</Link>
         </div>
 
         {/* Right: Status Dot */}
