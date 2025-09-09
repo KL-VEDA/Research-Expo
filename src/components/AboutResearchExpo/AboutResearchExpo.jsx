@@ -2,17 +2,21 @@
 
 import React from 'react';
 import './AboutResearchExpo.css';
-import expoImage from '../../assets/expo.png'; // use your existing expo image
+import expoImage from './../../assets/media/ICEES/OneDrive_8_8-9-2025/IMG_0566.JPG';
 
 function AboutResearchExpo() {
   return (
-    <div className="about-research-expo">
+    <section className="about-research-expo" aria-labelledby="expo-heading">
       <div className="expo-left">
-        <img src={expoImage} alt="Research Expo 2025" className="expo-image" />
+        <img 
+          src={expoImage} 
+          alt="Students and faculty engaging at the Research Expo 2025" 
+          className="expo-image" 
+        />
       </div>
 
       <div className="expo-right">
-        <h1 className="expo-title">About Research Expo 2025</h1>
+        <h2 id="expo-heading" className="expo-title">About Research Expo 2025</h2>
         <p className="expo-description">
           The <strong>Research Expo 2025</strong> is your chance to shine as a researcher. Compete with the brightest minds through poster and paper presentations, and showcase your groundbreaking ideas.
         </p>
@@ -26,7 +30,7 @@ function AboutResearchExpo() {
           <li>Showcase of innovative technologies</li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 }
 

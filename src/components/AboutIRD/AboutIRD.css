@@ -1,24 +1,69 @@
 .ird-section {
-  background-color: #ffffff;
-  padding: 60px 30px;
+  padding: 80px 24px;
+  background: var(--muted-brick);
+  transition: background 0.3s ease-in-out;
 }
 
 .ird-content {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .ird-title {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  color: #222;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 35px;
+  color: var(--pure-white);
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.ird-title:hover {
+  color: var(--muted-gold);
 }
 
 .ird-description {
-  font-size: 17px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  position: relative;
+  font-size: 1.1rem;
+  color: var(--deep-charcoal);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  background: linear-gradient(to bottom right, var(--pure-white), var(--warm-beige));
+  padding: 20px 28px;
+  border-radius: 12px;
+  border-left: 5px solid var(--muted-gold);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
+}
+
+.ird-description:hover {
+  transform: scale(1.015);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid var(--warm-beige);
+}
+
+/* Optional: slight italic inside strong/em tags for academic tone */
+.ird-description em {
+  font-style: italic;
+  color: var(--academic-maroon);
+}
+
+.ird-description strong {
+  font-weight: 700;
+  color: var(--light-maroon);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

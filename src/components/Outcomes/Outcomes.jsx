@@ -5,9 +5,8 @@ import './Outcomes.css';
 
 function Outcomes() {
   return (
-    <div className="outcomes-container">
+    <section className="outcomes-container" aria-labelledby="outcomes-heading">
       <div className="outcomes-inner">
-
         <div className="outcome-box">
           <h3 className="outcome-title">500+ Participants</h3>
           <p className="outcome-desc">
@@ -28,9 +27,8 @@ function Outcomes() {
             Projects with potential for real-life applications and interdisciplinary impact.
           </p>
         </div>
-
       </div>
-    </div>
+    </section>
   );
 }
 

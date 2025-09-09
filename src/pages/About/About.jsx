@@ -10,43 +10,57 @@ import AboutICEES from '../../components/AboutICEES/AboutICEES.jsx';
 import AboutIRD from '../../components/AboutIRD/AboutIRD.jsx';
 import AboutVEDA from '../../components/AboutVEDA/AboutVEDA.jsx';
 
+import Ribbon from '../../components/Ribbon/Ribbon.jsx';
+
 import './About.css';
 
 function About() {
   return (
     <div className="about-page">
 
-      {/* <section id="about-flyer">
+      <section id="about-flyer">
         <AboutFlyer />
-      </section> */}
+      </section>
 
-      {/* <section id="about-research-expo">
+      <Ribbon />
+
+      <section id="about-research-expo">
         <AboutResearchExpo />
-      </section> */}
+      </section>
+
+      <Ribbon />
 
       {/* <section id="content-brochure">
         <ContentBrochure />
       </section> */}
 
-      {/* <section id="outcomes">
+      <section id="outcomes">
         <Outcomes />
-      </section> */}
+      </section>
 
-      {/* <section id="timeline">
+      <Ribbon ribbon="2" />
+
+      <section id="timeline">
         <LandingPageTimeLine />
-      </section> */}
+      </section>
 
-      {/* <section id="icees">
+      <Ribbon text="International Conference on Energy, Environment, and Sustainability" ribbon="8" />
+
+      <section id="icees">
         <AboutICEES />
-      </section> */}
+      </section>
 
-      {/* <section id="AboutIRD">
+      <Ribbon ribbon='2' />
+
+      <section id="AboutIRD">
         <AboutIRD />
-      </section> */}
+      </section>
+      
+      <Ribbon ribbon='2' />
 
-      {/* <section id="AboutVEDA">
+      <section id="AboutVEDA">
         <AboutVEDA />
-      </section> */}
+      </section>
 
     </div>
   );

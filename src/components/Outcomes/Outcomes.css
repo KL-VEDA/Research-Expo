@@ -1,5 +1,5 @@
 .outcomes-container {
-  background: linear-gradient(to right, #e0ecf8, #f9f9f9);
+  background: linear-gradient(to right, var(--warm-beige), var(--pure-white));
   padding: 60px 20px;
 }
 
@@ -16,27 +16,30 @@
 
 .outcome-box {
   flex: 1 1 300px;
-  background-color: white;
+  background-color: var(--pure-white);
   border-radius: 12px;
-  padding: 30px 20px;
+  padding: 30px 24px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--light-gray-mist);
 }
 
 .outcome-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .outcome-title {
-  font-size: 22px;
-  font-weight: bold;
-  color: #007bff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--academic-maroon);
   margin-bottom: 15px;
   text-align: center;
 }
 
 .outcome-desc {
-  font-size: 16px;
-  color: #555;
+  font-size: 1rem;
+  color: var(--charcoal-text);
   text-align: center;
+  line-height: 1.6;
 }

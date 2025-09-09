@@ -1,14 +1,15 @@
 .about-research-expo {
   display: flex;
   flex-wrap: wrap;
-  padding: 60px 40px;
-  background-color: #fff;
+  padding: 30px 20px;
+  background-color: var(--pure-white);
   align-items: center;
+  justify-content: center;
   gap: 40px;
 }
 
 .expo-left {
-  flex: 1 1 40%;
+  flex: 1 1 200px;
   display: flex;
   justify-content: center;
 }
@@ -18,28 +19,37 @@
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--pale-clay);
+  transition: transform 0.3s ease;
+}
+
+.expo-image:hover {
+  transform: scale(1.02);
 }
 
 .expo-right {
-  flex: 1 1 50%;
+  flex: 1 1 500px;
+  max-width: 80%;
 }
 
 .expo-title {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--academic-maroon);
 }
 
 .expo-description {
-  font-size: 18px;
+  font-size: 1.1rem;
   margin-bottom: 16px;
-  color: #555;
+  color: var(--charcoal-text);
+  line-height: 1.6;
 }
 
 .expo-highlights {
   list-style-type: disc;
   padding-left: 20px;
-  color: #444;
-  font-size: 17px;
+  font-size: 1rem;
+  color: var(--deep-charcoal);
+  line-height: 1.6;
 }

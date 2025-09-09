@@ -1,41 +1,103 @@
 .veda-section {
-  background-color: #f7f7fb;
-  padding: 60px 30px;
+  padding: 70px 24px;
+  background-color: var(--warm-beige);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .veda-content {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .veda-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #222;
-  margin-bottom: 25px;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--academic-maroon);
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
 }
 
 .veda-description {
-  font-size: 17px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: var(--deep-charcoal);
+  line-height: 1.75;
+  background-color: var(--pure-white);
+  margin: 16px auto 24px;
+  padding: 18px 22px;
+  border-left: 5px solid var(--light-maroon);
+  border-radius: 10px;
+  text-align: left;
+  max-width: 850px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+}
+
+.veda-description:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-left-color: var(--muted-gold);
 }
 
 .veda-subtitle {
-  font-size: 22px;
-  font-weight: 600;
-  color: #007bff;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--light-maroon);
+  margin: 40px 0 20px;
 }
 
 .veda-list {
-  list-style-type: disc;
+  list-style: disc;
   padding-left: 20px;
-  color: #444;
   text-align: left;
   max-width: 800px;
   margin: 0 auto;
+  color: var(--charcoal-text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.veda-list li {
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.veda-list li:hover {
+  color: var(--academic-maroon);
+}
+
+/* Optional subtle entrance animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.veda-description-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.veda-description {
+  flex: 1 1 45%;
+  max-width: 45%;
+  margin: 0;
+  /* keep rest of styles */
+}
+
+/* Responsive fallback for smaller screens */
+@media (max-width: 768px) {
+  .veda-description {
+    max-width: 100%;
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
 }

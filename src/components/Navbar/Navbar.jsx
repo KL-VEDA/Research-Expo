@@ -51,7 +51,7 @@ function Navbar() {
       <nav className="navbar-container">
         <div className="navbar-links-left">
           <Link to="/" className="navbar-link">Home</Link>
-          <Link to="/about" className="navbar-link"  style={{display: 'none'}}>About</Link>
+          <Link to="/about" className="navbar-link">About</Link>
 
           <div className="navbar-dropdown" style={{display: 'none'}}>
             <span className="navbar-link">Compete ▾</span>
