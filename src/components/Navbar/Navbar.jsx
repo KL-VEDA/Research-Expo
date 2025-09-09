@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import Ribbon from "./../Ribbon/Ribbon";
+
 import kllogo from '../../assets/kllogo.png';
 import vedaLogo from '../../assets/images/VEDA.png';
 import irdLogo from '../../assets/images/IRD.png';
+
 import './Navbar.css';
+
 import { SERVER } from "./../../connectivity/routes";
 
 function Navbar() {
@@ -25,7 +30,7 @@ function Navbar() {
 
   useEffect(() => {
     checkServerStatus();
-    const interval = setInterval(checkServerStatus, 5000);
+    const interval = setInterval(checkServerStatus, 10 * 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -39,6 +44,8 @@ function Navbar() {
           <img draggable={false} src={vedaLogo} alt="VEDA Logo" className="top-logo" style={{scale: "1.7", transform: "translateX(-50%)"}} />
         </div>
       </div>
+
+      <Ribbon ribbon='5'/>
 
       {/* Bottom: Navigation Links */}
       <nav className="navbar-container">
@@ -74,6 +81,7 @@ function Navbar() {
           <div className={`status-dot ${status}`}></div>
         </div>
       </nav>
+      <Ribbon ribbon='3'/>
     </header>
   );
 }
