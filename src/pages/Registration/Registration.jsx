@@ -1,6 +1,7 @@
 // ./Components/Registration/Registration.jsx
 import React, { useState } from "react";
 import "./Registration.css";
+import { useNavigate } from "react-router-dom";
 
 function Registration() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ function Registration() {
     phone: "",
     category: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,6 +20,22 @@ function Registration() {
     e.preventDefault();
     alert("Registration submitted successfully!");
   };
+
+  const handleGoHome = () => {
+    navigate("/");
+  };
+
+  return (
+    <>
+        <h1 className="registration-title" style={{textAlign: 'center', marginTop: '24vh', height: '30vh'}}>
+          Registrations are not open at the moment. Please check back later.
+          <br />
+        <button className="back-home-button" onClick={handleGoHome} aria-label="Go back to home page">
+          Go Back Home
+        </button>
+        </h1>
+    </>
+  )
 
   return (
     <div className="registration-container">

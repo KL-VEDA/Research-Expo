@@ -32,8 +32,8 @@ function App() {
         <Route path="/rules" element={<Rules />} />
         <Route path="/winners" element={<Winners />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
+        {/* <Route path="/login" element={<Login />} /> */}
 
         {/* Media routes */}
         <Route path="/media" element={<Media />} /> {/* fallback/default */}

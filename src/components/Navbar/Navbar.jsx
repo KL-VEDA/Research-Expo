@@ -62,8 +62,6 @@ function Navbar() {
             </div>
           </div>
 
-          <Link to="/register" className="navbar-link"  style={{display: 'none'}}>Registration</Link>
-
           <div className="navbar-dropdown">
             <span className="navbar-link"><Link to="/media"  className="navbar-link">Media ▾</Link></span>
             <div className="dropdown-content">
@@ -72,6 +70,8 @@ function Navbar() {
               {/* <Link to="/media/events" className="dropdown-link">Events</Link> */}
             </div>
           </div>
+
+          <Link to="/register" className="navbar-link">Registration</Link>
 
           <Link to="/contact" className="navbar-link"  style={{display: 'none'}}>Contact</Link>
         </div>
