@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './AboutResearchExpo.css';
-import expoImage from './../../assets/media/ICEES/OneDrive_8_8-9-2025/IMG_0566.JPG';
+import expoImage from './../../assets/media/ICEES/Image_27.jpg';
 
 function AboutResearchExpo() {
   return (

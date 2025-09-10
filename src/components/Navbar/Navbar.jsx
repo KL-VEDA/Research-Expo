@@ -53,7 +53,7 @@ function Navbar() {
           <Link to="/" className="navbar-link">Home</Link>
           <Link to="/about" className="navbar-link">About</Link>
 
-          <div className="navbar-dropdown" style={{display: 'none'}}>
+          <div className="navbar-dropdown">
             <span className="navbar-link">Compete ▾</span>
             <div className="dropdown-content">
               <Link to="/categories" className="dropdown-link">Categories</Link>

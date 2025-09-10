@@ -20,7 +20,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx'; // 
 
 
 import "./App.css";
-
+  
 function App() {
   return (
     <Router>
@@ -29,9 +29,9 @@ function App() {
         {/* Public routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/winners" element={<Winners />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/rules" element={<Rules />} />
+        <Route path="/winners" element={<Winners />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/media" element={<Media />} />
         <Route path="/contact" element={<Contact />} />
