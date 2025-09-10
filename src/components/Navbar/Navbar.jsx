@@ -64,12 +64,12 @@ function Navbar() {
 
           <Link to="/register" className="navbar-link"  style={{display: 'none'}}>Registration</Link>
 
-          <div className="navbar-dropdown"  style={{display: 'none'}}>
-            <span className="navbar-link">Media ▾</span>
+          <div className="navbar-dropdown">
+            <span className="navbar-link"><Link to="/media"  className="navbar-link">Media ▾</Link></span>
             <div className="dropdown-content">
               <Link to="/media/researcathon" className="dropdown-link">Researcathon</Link>
               <Link to="/media/icees" className="dropdown-link">ICEES</Link>
-              <Link to="/media/events" className="dropdown-link">Events</Link>
+              {/* <Link to="/media/events" className="dropdown-link">Events</Link> */}
             </div>
           </div>
 

@@ -41,3 +41,61 @@
 .media-card img:hover {
   transform: scale(1.05);
 }
+
+/* ---------- New Styles for Fallback View ---------- */
+
+/* Fallback Section Title */
+.media-fallback {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.media-fallback h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Flyer Grid Layout */
+.media-flyer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 2fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Individual Flyer Card */
+.media-flyer-card {
+  position: relative;
+  height: 300px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.media-flyer-card:hover {
+  transform: scale(1.03);
+}
+
+/* Overlay for text */
+.media-flyer-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title text */
+.media-flyer-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 1rem;
+}

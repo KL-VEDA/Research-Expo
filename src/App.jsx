@@ -18,9 +18,8 @@ import PageNotFound from './pages/PageNotFound/PageNotFound.jsx';
 
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx'; // JWT check wrapper
 
-
 import "./App.css";
-  
+
 function App() {
   return (
     <Router>
@@ -33,9 +32,14 @@ function App() {
         <Route path="/rules" element={<Rules />} />
         <Route path="/winners" element={<Winners />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="/media" element={<Media />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+
+        {/* Media routes */}
+        <Route path="/media" element={<Media />} /> {/* fallback/default */}
+        <Route path="/media/:type" element={<Media />} /> {/* dynamic */}
+
+        {/* Protected route */}
         <Route
           path="/dashboard"
           element={
@@ -44,6 +48,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        {/* 404 */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
