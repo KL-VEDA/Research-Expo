@@ -105,7 +105,7 @@ class PUBLIC {
                 throw new Error(data.error || "Registration failed");
             }
 
-            return { success: true, team_id: data.team_id };
+            return { success: true, team_id: data.team_id, team_code: data.team_code };
         } catch (error) {
             console.error("Registration error:", error);
             return { success: false, message: error.message };
