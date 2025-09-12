@@ -4,6 +4,8 @@ import "./Registration.css";
 import { useNavigate } from "react-router-dom";
 import { PUBLIC } from "../../connectivity/routes";
 
+const MAX_MEMBERS_LIMIT = 5; // Total including leader
+
 function Registration() {
   const navigate = useNavigate();
 
@@ -13,8 +15,7 @@ function Registration() {
   });
 
   const [members, setMembers] = useState([
-    { name: "", contact: "", email: "", is_team_leader: true },
-    { name: "", contact: "", email: "", is_team_leader: false },
+    { name: "", contact: "", email: "", is_team_leader: true }, // First is team leader
   ]);
 
   const handleTeamChange = (e) => {
@@ -23,37 +24,57 @@ function Registration() {
 
   const handleMemberChange = (index, e) => {
     const updatedMembers = [...members];
+
+    // Prevent changing team leader status for non-leader
+    if (e.target.name === "is_team_leader" && index !== 0) {
+      return;
+    }
+
     updatedMembers[index][e.target.name] =
-      e.target.name === "is_team_leader"
-        ? e.target.checked
-        : e.target.value;
+      e.target.name === "is_team_leader" ? e.target.checked : e.target.value;
+
+    // Always make sure only the first member is the leader
+    if (e.target.name === "is_team_leader" && e.target.checked && index === 0) {
+      updatedMembers.forEach((m, i) => {
+        m.is_team_leader = i === 0;
+      });
+    }
+
     setMembers(updatedMembers);
   };
 
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  const leaders = members.filter((m) => m.is_team_leader);
-  if (leaders.length !== 1) {
-    alert("Exactly one team leader must be selected.");
-    return;
-  }
-
-  const payload = {
-    ...teamData,
-    members
+  const addMember = () => {
+    if (members.length < MAX_MEMBERS_LIMIT) {
+      setMembers([
+        ...members,
+        { name: "", contact: "", email: "", is_team_leader: false },
+      ]);
+    }
   };
 
-  const response = await PUBLIC.register(payload);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (response.success) {
-    alert(`Registration successful! Your Team ID is ${response.team_id}`);
-    navigate("/");
-  } else {
-    alert(`Error: ${response.message}`);
-  }
-};
+    const leaders = members.filter((m) => m.is_team_leader);
+    if (leaders.length !== 1) {
+      alert("Exactly one team leader must be selected.");
+      return;
+    }
+
+    const payload = {
+      ...teamData,
+      members,
+    };
+
+    const response = await PUBLIC.register(payload);
+
+    if (response.success) {
+      alert(`Registration successful! Your Team ID is ${response.team_id}`);
+      navigate("/");
+    } else {
+      alert(`Error: ${response.message}`);
+    }
+  };
 
   return (
     <div className="registration-container">
@@ -103,17 +124,26 @@ const handleSubmit = async (e) => {
               onChange={(e) => handleMemberChange(index, e)}
               required
             />
+            {index == 0 && 
+            <><span className="leader-badge">Leader</span>
             <label>
               <input
                 type="checkbox"
                 name="is_team_leader"
                 checked={member.is_team_leader}
                 onChange={(e) => handleMemberChange(index, e)}
+                disabled={index !== 0} // Only first member can be leader
               />
               Team Leader
-            </label>
+            </label></>}
           </div>
         ))}
+
+        {members.length < MAX_MEMBERS_LIMIT && (
+          <button type="button" className="add-member-btn" onClick={addMember}>
+            ➕ Add Member
+          </button>
+        )}
 
         <button type="submit" className="register-btn">
           Submit Registration

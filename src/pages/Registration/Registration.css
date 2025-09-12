@@ -27,6 +27,37 @@
   font-size: 1rem;
 }
 
+/* New: Member Section Styling */
+.member-section {
+  padding: 1rem;
+  border: 1px solid var(--light-gray-mist);
+  border-radius: 8px;
+  background: var(--pure-white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+/* New: Add Member Button */
+.add-member-btn {
+  background: transparent;
+  color: var(--academic-maroon);
+  border: 2px dashed var(--academic-maroon);
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-member-btn:hover {
+  background: var(--light-maroon);
+  color: var(--pure-white);
+  border-style: solid;
+}
+
+/* Existing: Register Button */
 .register-btn {
   background: var(--academic-maroon);
   color: var(--pure-white);
@@ -40,4 +71,15 @@
 
 .register-btn:hover {
   background: var(--light-maroon);
+}
+
+/* Optional: Responsive layout for smaller screens */
+@media (max-width: 600px) {
+  .registration-container {
+    padding: 2rem;
+  }
+
+  .registration-form {
+    width: 100%;
+  }
 }
