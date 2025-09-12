@@ -237,6 +237,14 @@ function Registration() {
   };
 
   return (
+    <>
+    <div className="registration-container">
+      <h1 className="registration-title">Registrations are not opened.</h1>
+      </div>
+    </>
+  )
+
+  return (
     <div className="registration-container">
       <h1 className="registration-title">📝 Team Registration</h1>
 
