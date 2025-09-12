@@ -17,6 +17,12 @@ class API {
     }
   };
 
+  static get PUBLIC() {
+    return {
+      STATUS: `${this.BACKEND}/register`
+    }
+  };
+
   static get ADMIN() {
     // API.AUTHENTICATION.BASE  := http://.../auth
     // API.AUTHENTICATION.LOGIN := http://.../auth/login

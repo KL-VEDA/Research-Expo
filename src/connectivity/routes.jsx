@@ -85,6 +85,32 @@ class ADMIN {
 
 
 
-// Export the SERVER class
 
-export { SERVER, ADMIN };
+// ✅ PUBLIC class to handle non-authenticated endpoints
+class PUBLIC {
+    static async register(formData) {
+        try {
+            const response = await fetch(API.PUBLIC.STATUS, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                // For HTTP status errors like 400 or 500
+                throw new Error(data.error || "Registration failed");
+            }
+
+            return { success: true, team_id: data.team_id };
+        } catch (error) {
+            console.error("Registration error:", error);
+            return { success: false, message: error.message };
+        }
+    }
+}
+
+export { SERVER, ADMIN, PUBLIC };
