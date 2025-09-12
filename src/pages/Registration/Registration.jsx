@@ -1,11 +1,9 @@
-  // ./Components/Registration/Registration.jsx
 import React, { useState, useEffect } from "react";
 import "./Registration.css";
 import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
 import { PUBLIC } from "../../connectivity/routes";
-
-import KLIRDImage from "./../../assets/images/IRD.png"
+import KLIRDImage from "./../../assets/images/IRD.png";
 
 const MAX_MEMBERS_LIMIT = 5;
 
@@ -15,24 +13,33 @@ function Registration() {
   const [teamData, setTeamData] = useState({
     team_name: "",
     paper_drive_link: "",
+    password: "",
   });
 
   const [members, setMembers] = useState([
-    { name: "", contact: "", email: "", is_team_leader: true },
+    {
+      name: "",
+      contact: "",
+      email: "",
+      is_team_leader: true,
+      degree_program: "",
+      year_or_status: "",
+      institution: "",
+      role: "",
+    },
   ]);
 
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [teamDetails, setTeamDetails] = useState(null);
   const [errorModal, setErrorModal] = useState({ show: false, message: "" });
 
-  // Auto-download certificate after registration
   useEffect(() => {
     const autoDownload = async () => {
       if (registrationSuccess && teamDetails) {
         await new Promise((res) => setTimeout(res, 300));
         const canvas = await html2canvas(document.getElementById("certificate-canvas"));
         const link = document.createElement("a");
-        link.download = `${teamDetails.team_name}_certificate.png`;
+        link.download = `${teamDetails.team_code}.png`;
         link.href = canvas.toDataURL("image/png");
         link.click();
       }
@@ -47,9 +54,7 @@ function Registration() {
   const handleMemberChange = (index, e) => {
     const updatedMembers = [...members];
 
-    if (e.target.name === "is_team_leader" && index !== 0) {
-      return;
-    }
+    if (e.target.name === "is_team_leader" && index !== 0) return;
 
     updatedMembers[index][e.target.name] =
       e.target.name === "is_team_leader" ? e.target.checked : e.target.value;
@@ -67,7 +72,16 @@ function Registration() {
     if (members.length < MAX_MEMBERS_LIMIT) {
       setMembers([
         ...members,
-        { name: "", contact: "", email: "", is_team_leader: false },
+        {
+          name: "",
+          contact: "",
+          email: "",
+          is_team_leader: false,
+          degree_program: "",
+          year_or_status: "",
+          institution: "",
+          role: "",
+        },
       ]);
     }
   };
@@ -96,9 +110,19 @@ function Registration() {
           team_id: response.team_id,
         });
         setRegistrationSuccess(true);
-
-        setTeamData({ team_name: "", paper_drive_link: "" });
-        setMembers([{ name: "", contact: "", email: "", is_team_leader: true }]);
+        setTeamData({ team_name: "", paper_drive_link: "", password: "" });
+        setMembers([
+          {
+            name: "",
+            contact: "",
+            email: "",
+            is_team_leader: true,
+            degree_program: "",
+            year_or_status: "",
+            institution: "",
+            role: "",
+          },
+        ]);
       } else {
         setErrorModal({ show: true, message: response.message });
       }
@@ -118,8 +142,19 @@ function Registration() {
   const resetRegistration = () => {
     setRegistrationSuccess(false);
     setTeamDetails(null);
-    setTeamData({ team_name: "", paper_drive_link: "" });
-    setMembers([{ name: "", contact: "", email: "", is_team_leader: true }]);
+    setTeamData({ team_name: "", paper_drive_link: "", password: "" });
+    setMembers([
+      {
+        name: "",
+        contact: "",
+        email: "",
+        is_team_leader: true,
+        degree_program: "",
+        year_or_status: "",
+        institution: "",
+        role: "",
+      },
+    ]);
   };
 
   return (
@@ -154,6 +189,14 @@ function Registration() {
             onChange={handleTeamChange}
             required
           />
+          <input
+            type="password"
+            name="password"
+            placeholder="Create Team Password"
+            value={teamData.password}
+            onChange={handleTeamChange}
+            required
+          />
 
           <h3>👥 Team Members</h3>
           {members.map((member, index) => (
@@ -181,6 +224,34 @@ function Registration() {
                 value={member.contact}
                 onChange={(e) => handleMemberChange(index, e)}
                 required
+              />
+              <input
+                type="text"
+                name="degree_program"
+                placeholder="Degree Program (e.g., B.Tech, M.Tech, PhD, Faculty)"
+                value={member.degree_program}
+                onChange={(e) => handleMemberChange(index, e)}
+              />
+              <input
+                type="text"
+                name="year_or_status"
+                placeholder="Year or Status (e.g., 3rd Year, Completed, N/A)"
+                value={member.year_or_status}
+                onChange={(e) => handleMemberChange(index, e)}
+              />
+              <input
+                type="text"
+                name="institution"
+                placeholder="Institution / University"
+                value={member.institution}
+                onChange={(e) => handleMemberChange(index, e)}
+              />
+              <input
+                type="text"
+                name="role"
+                placeholder="Role (e.g., Student, Faculty, Professor)"
+                value={member.role}
+                onChange={(e) => handleMemberChange(index, e)}
               />
               {index === 0 && (
                 <>
