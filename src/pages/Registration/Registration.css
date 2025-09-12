@@ -1,213 +1,211 @@
+
+/* ------------------- Registration Container ------------------- */
 .registration-container {
-  padding: 3rem 6rem;
-  background: var(--ivory-white);
-  min-height: 100vh;
-  text-align: center;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px 30px;
+  background: var(--pure-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--charcoal-text);
 }
 
 .registration-title {
-  font-size: 2.4rem;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: var(--deep-charcoal);
+}
+
+/* ------------------- Step Progress Bar ------------------- */
+.step-progress-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  user-select: none;
+}
+
+.step-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  color: var(--light-gray-mist);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.step-item.active {
   color: var(--academic-maroon);
-  margin-bottom: 2rem;
 }
 
-.registration-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+.step-item.completed {
+  color: lightgreen;
 }
 
-.registration-form input,
-.registration-form select {
-  padding: 0.8rem;
-  border: 1px solid var(--light-gray-mist);
-  border-radius: 8px;
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: currentColor;
+  /* color: var(--pure-white); */
+  margin: 0 auto 8px;
+  line-height: 30px;
+  font-weight: 700;
   font-size: 1rem;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
 }
 
-.member-section {
-  padding: 1rem;
-  border: 1px solid var(--light-gray-mist);
-  border-radius: 8px;
-  background: var(--pure-white);
+.step-divider {
+  position: absolute;
+  top: 15px;
+  right: -50%;
+  width: 100%;
+  height: 4px;
+  background-color: currentColor;
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* ------------------- Form Styles ------------------- */
+.registration-form input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.8px solid var(--light-gray-mist);
+  transition: border-color 0.3s ease;
+  color: var(--deep-charcoal);
+}
+
+.registration-form input:focus {
+  outline: none;
+  border-color: var(--academic-maroon);
+  box-shadow: 0 0 8px rgba(123,45,38,0.3);
+}
+
+.registration-form h3 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--academic-maroon);
+}
+
+/* ------------------- Buttons ------------------- */
+.step-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  text-align: left;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.register-btn,
+.back-btn,
+.add-member-btn,
+.remove-member-btn,
+.download-btn,
+.reset-btn {
+  background-color: var(--academic-maroon);
+  color: var(--pure-white);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  user-select: none;
+}
+
+.back-btn {
+  background-color: var(--clay-rust);
 }
 
 .add-member-btn {
-  background: transparent;
-  color: var(--academic-maroon);
-  border: 2px dashed var(--academic-maroon);
-  padding: 0.7rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
+  background-color: var(--muted-gold);
+  margin-bottom: 20px;
 }
 
-.add-member-btn:hover {
-  background: var(--light-maroon);
-  color: var(--pure-white);
-  border-style: solid;
+.remove-member-btn {
+  background-color: var(--muted-brick);
+  margin-top: 8px;
 }
 
-.register-btn {
-  background: var(--academic-maroon);
-  color: var(--pure-white);
-  padding: 0.9rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: 0.3s ease;
-}
-
-.register-btn:hover {
-  background: var(--light-maroon);
-}
-
-@media (max-width: 600px) {
-  .registration-container {
-    padding: 2rem;
-  }
-
-  .registration-form {
-    width: 100%;
-  }
-}
-
-/* ============================
-   Certificate Styles
-============================ */
-/* .certificate-container {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.certificate {
-  border: 2px solid #000;
-  padding: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  background: var(--pure-white);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-}
-
-.certificate h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: var(--academic-maroon);
-}
-
-.certificate h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-.certificate p {
-  font-size: 1.1rem;
-  margin: 0.6rem 0;
-} */
-
-.disclaimer {
-  margin-top: 1.5rem;
-  color: #c0392b;
-  font-size: 0.95rem;
-}
-
-/* Download Certificate Button */
-.download-btn {
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.download-btn:hover {
-  background-color: #0056b3;
-}
-
-/* Register Another Team Button */
-.register-another-btn {
-  margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: var(--academic-maroon);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.register-another-btn:hover {
+.register-btn:hover,
+.back-btn:hover,
+.add-member-btn:hover,
+.remove-member-btn:hover,
+.download-btn:hover,
+.reset-btn:hover {
   background-color: var(--light-maroon);
 }
 
-/* ============================
-   Modal Styles
-============================ */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+/* ------------------- Member Cards ------------------- */
+.member-card {
+  background-color: var(--ivory-white);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
 }
 
-.modal-content {
-  background: var(--pure-white);
-  padding: 2rem;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.member-card h4 {
+  margin-bottom: 15px;
+  color: var(--clay-rust);
+}
+
+/* ------------------- Review Page ------------------- */
+.review-page {
+  padding: 20px 10px;
+}
+
+.review-page h3 {
   text-align: center;
-  border: 2px solid var(--academic-maroon);
+  color: var(--muted-gold);
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-.modal-content h3 {
-  margin-top: 0;
+.review-section {
+  margin-bottom: 25px;
+  padding: 15px 20px;
+  border: 1px solid var(--light-gray-mist);
+  border-radius: 8px;
+  background-color: var(--warm-beige);
+}
+
+.review-section h4 {
+  margin-bottom: 12px;
   color: var(--academic-maroon);
+  border-bottom: 2px solid var(--academic-maroon);
+  padding-bottom: 6px;
+  font-weight: 700;
 }
 
-.modal-content p {
-  margin: 1rem 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-.modal-content button {
-  padding: 0.6rem 1.2rem;
-  background: var(--academic-maroon);
-  color: white;
-  border: none;
+.review-member-card {
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray-mist);
+  padding: 12px 16px;
+  margin-bottom: 15px;
   border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
 
-.modal-content button:hover {
-  background: var(--light-maroon);
+.review-member-card h5 {
+  color: var(--clay-rust);
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 
-.certificate {
-  border: 2px solid #000;
+.review-member-card p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+/* ------------------- Final Team Card ------------------- */
+.team-card {
+  border: 2px solid var(--deep-charcoal);
   padding: 0rem 0rem 2rem 0rem;
   width: 330px;
   margin: 0 auto;
@@ -217,49 +215,136 @@
   overflow: hidden;
 }
 
-.certificate::after {
+.team-card::after {
   content: "";
   display: block;
   width: 100%;
   height: 5px;
   background: var(--academic-maroon);
   margin: 1rem auto 0 auto;
-  /* box-shadow: 0px 10px 0px var(--academic-maroon); */
-  transform: rotateZ(90deg) translateY(calc(166px - 25px)) translateX(calc(-35%));
+  transform: rotateZ(90deg) translateY(calc(170px - 25px)) translateX(calc(-35%));
 }
 
-.certificate::before {
+.team-card::before {
   content: "";
   display: block;
   width: 100%;
   height: 5px;
   background: var(--academic-maroon);
   margin: 1rem auto 0 auto;
-  /* box-shadow: 0px 10px 0px var(--academic-maroon); */
-  transform: rotateZ(-90deg) translateY(calc(166px - 25px)) translateX(calc(-35%));
+  transform: rotateZ(-90deg) translateY(calc(170px - 25px)) translateX(calc(-35%));
 }
 
 .ird-logo-centered {
   max-width: 300px;
   height: auto;
   margin-top: -35px;
-  /* margin-bottom: 1rem; */
 }
 
-.certificate h2 {
+.team-card h2 {
   font-size: 1rem;
   margin-top: -35px;
   margin-bottom: 0.5rem;
   color: var(--academic-maroon);
 }
 
-.certificate h3 {
+.team-card h3 {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--deep-charcoal);
 }
 
-.certificate p {
+.team-card p {
   font-size: 1rem;
   margin: 0.6rem 0;
+  color: var(--charcoal-text);
+}
+
+.team-card p.top-line {
+  width: 80%;
+  border: 2px solid var(--academic-maroon);
+  background: var(--academic-maroon);
+  height: 25px;
+  transform: translateY(-21px);
+  margin: 0px;
+  margin-bottom: -20px;
+  border-bottom-right-radius: 20px;
+  color: var(--pure-white);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 2px;
+}
+
+.team-card p.top-line::after {
+  content: "";
+  display: block;
+  width: 200%;
+  background: transparent;
+  height: 600px;
+  transform: translateX(-20%) translateY(-20%);
+}
+
+.card-buttons {
+  margin-top: 1rem;
+}
+
+/* ------------------- Modal ------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: var(--pure-white);
+  padding: 30px 40px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+}
+
+.modal-content h3 {
+  color: var(--muted-brick);
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.modal-content button {
+  padding: 10px 25px;
+  background-color: var(--academic-maroon);
+  color: var(--pure-white);
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal-content button:hover {
+  background-color: var(--light-maroon);
+}
+
+/* ------------------- Links ------------------- */
+.review-section a {
+  color: var(--academic-maroon);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.review-section a:hover {
+  text-decoration: underline;
 }
